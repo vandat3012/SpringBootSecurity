@@ -8,10 +8,12 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @Table(name = "user")
-public class User {
+public class AppUser {
     @Id
-    @GeneratedValue (strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
-    private String email;
+    private String password;
+    @ManyToOne
+    private AppRole appRole;
 }
